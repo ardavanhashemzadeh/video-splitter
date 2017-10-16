@@ -124,7 +124,7 @@ def split_by_seconds(filename, split_length, vcodec="copy", acodec="copy",
             split_start = split_length * n
 
         split_str += " -ss "+str(split_start)+" -t "+str(split_length) + \
-                    " '"+filebase + "-" + str(n) + "." + fileext + \
+                    " '"+filebase + "-" + str('%03d' % n) + "." + fileext + \
                     "'"
         print "About to run: "+split_cmd+split_str
         output = subprocess.Popen(split_cmd+split_str, shell = True, stdout =
